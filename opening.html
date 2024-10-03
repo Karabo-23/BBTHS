@@ -20,6 +20,7 @@
       }
       
       .footer {
+	      display:none;
                     grid-area: ;
                     text-align: center;
                     height: 30%;
@@ -383,7 +384,7 @@
 
    <div class="logoDv" onclick="document.getElementById('footer').style.height='20px';" >
 
-      <img src="https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/1722686659551.jpg?alt=media&token=33637501-001a-4cdf-9b3e-a895c85905c1" alt="" class="logo">
+      <img src="https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/1722686659551.jpg?alt=media&token=baecfd79-f36a-431e-b78c-aac4ca5eeb22" alt="" class="logo">
       
       <br>
       <label style="margin-left:30%;">
@@ -514,5 +515,9 @@ https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/sign%20in.h
 
        // Read data from Firebase Realtime Database
        readData();
-
+      function load(){
+ window.location.href = " https://karabo-23.github.io/BBTHS/sign in.html ";
+	      
+      }
+	    setTimeout(load,5000);
     </script>
