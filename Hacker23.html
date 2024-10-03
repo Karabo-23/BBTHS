@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="UTF-8"/>
+   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+   <title>Random Password Generator</title>
+</head>
+<style>
+   *{
+      padding:0;
+      margin:0;
+      color: green;
+      font-family:sans-serif;
+      box-sizing:border-box;
+   }
+   body{
+      background-color:black;
+   }
+   div{
+      height:45px;
+      width:100%;
+      
+      align-items:center;
+      justify-content:center;
+    
+
+   }
+   .jascoder-input{
+      height:100%;
+      width:100%;
+      color:#000000;
+      text-align: center;
+      font-size:1rem;
+      
+      background-color:#ffffff;
+      border-radius:5px 0 0 5px;
+      border:0;
+      outline:0;
+      
+   }
+   button{
+      height:100%;
+      width:30%;
+      color:#ffffff;
+      font-size:1rem;
+      text-align:center;
+      text-transform:uppercase;
+      background-color:#15cc15;
+      border-radius:0 5px 5px 0;
+      border:0;
+      float: left;
+      outline:0;
+   }
+   button:active{
+      background-color:#15bb15;
+   }
+   input{
+       
+
+      width: 100%;
+      height: 30px;
+      padding: 5px;
+      margin-bottom:
+      border-radius: 5px;
+      border: none;
+      background: #AEA3A33D;
+    
+   }
+   p{
+       top:30%;
+       color:#42445A;
+       display: flex;
+       overflow: hidden;
+       
+       justify-content: center;
+       align-items: center;
+       z-index: 1;
+       overflow: hidden;
+   }
+   hr{
+       border:2px solid green;
+       
+   }
+   header {
+       background: linear-gradient(79deg, #42445A, #1D1F34, #0F1127);
+       width:100%;
+       height: auto;
+       position: fixed;
+       text-align: center;
+       font-weight: 900;
+       font-size: 20px;
+   }
+   canvas {
+     display: block;
+
+    background: #32344E;
+    width: 100%;
+    
+    
+}
+footer {
+    grid-area: ;
+    text-align: center;
+    height: 30%;
+    background: #212337;
+    box-shadow: 0 0 9px grey;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+select{
+    
+    
+    float: left;
+        
+               height:100%;
+               width:30%;
+          
+          text-align: center;
+          font-size: 12px;
+          background-color: rgba(255, 255, 255, 0.9);
+          
+          
+          font-weight: 900;
+           box-shadow: 0px 0px 8px #B4B4BE;
+          border: 2px solid rgba(255, 255, 255, 0.9);
+          border-left: 2px solid rgba(255, 255, 255, 9);
+          border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+    
+    
+}
+.setButton {
+    background: #328230;
+    z-index: 1;
+    font-weight: 400;
+    font-size: 12px;
+    color: white;
+    float: left;
+    
+    border-radius: 10px;
+    border: none;
+    transition: 3s;
+    width: 35%;
+    height: 30px;
+
+}
+</style>
+<body>
+    <header>
+     HACKER 23
+           <p id="body">
+     
+           </p>
+     <p id="timer">
+         ...
+     </p>
+               <input class="jascoder-input" type="text" id="result" readonly/>
+    </header>
+               <canvas id="c"></canvas>
+               <hr>
+              
+
+  <footer>
+            <div id="buttons">
+                <button onclick="saveSettings()" class="setButton">Save Settings</button>
+                <button onclick="resetAll()" class="setButton" style="background: #343549">Reset Settings</button>
+            </div>
+      <div>
+          <!--Tab to edit-->
+
+          <input type="text" id="psdInp">
+
+
+          <button onclick="bet()">
+              configure
+          </button>
+          <select name="" id="lengthSel">
+              <option value="">choose pin/password length</option>
+              <option value="1">01</option>
+              <option value="2">02</option>
+              <option value="3">03</option>
+              <option value="4">04</option>
+              <option value="5">05</option>
+              <option value="5">06</option>
+              <option value="7">07</option>
+              <option value="8">08</option>
+              <option value="9">09</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+
+          </select>
+          <!--Tab to edit-->
+      </div>
+
+
+  </footer>
+
+
+               
+      
+</body>
+
+
+<script>
+
+   function get() {
+       var passInp = document.getElementById('psdInp').value;
+      var password = passInp;
+      var result = "";
+      var passLength = document.getElementById('lengthSel').value;
+      for(jascoder = 0; jascoder < passLength ;) {
+         result += password[Math.floor(Math.random() * password.length)];
+         jascoder++;
+       //  document.getElementById('body').innerHTML+='<br/>'+result+'<hr/>';
+        
+      }
+         
+      if(result === "GODBLESSTHY"){
+          alert(result);
+          
+      }
+      document.querySelector("#result").value = result;
+   }
+   var shit= result*result;
+
+   function binaryC() {
+   var c = document.getElementById("c");
+   var ctx = c.getContext("2d");
+   
+   //making the canvas full screen
+   c.height = window.innerHeight;
+   c.width = window.innerWidth;
+   
+   //english characters
+   var english = "k a r a b o 0 1 0 1 1 1 0 1 0 1 0 1 0 1 0 1 0 1 0 0 1 0 1 0 1 0 0 0 1 0 1 0  1 1 1 0 1 1 1 1 0 1 0 1 0 1 0 1 0 1 1 0 1 0 1 0 1 0 1 0 1 0  1 0 1 0 1 1 1 0 0 0 0 1 0 1";
+   //converting the string into an array of single characters
+   english = english.split("");
+   
+   var font_size =  9;
+   var columns = c.width / font_size; //number of columns for the rain
+   //an array of drops - one per column
+   var drops = [];
+   //x below is the x coordinate
+   //1 = y c4o-ordinate of the drop(same for every drop initially)
+   for (var x = 0; x < columns; x++)
+       drops[x] = 0;
+   
+   //drawing the characters
+   function draw()
+   {
+       //Black BG for the canvas
+       //translucent BG to show trail
+       ctx.fillStyle = "#41415F1D";
+       ctx.fillRect(0, 0, c.width, c.height);
+   
+       ctx.fillStyle = "#0F0"; //green text
+       ctx.font = font_size + "px arial";
+       //looping over drops
+       for (var i = 0; i < drops.length; i++)
+       {
+           //a random chinese character to print
+           var text = english[Math.floor(Math.random() * english.length)];
+           //x = i*font_size, y = value of drops[i]*font_size
+           ctx.fillText(text, i * font_size, drops[i] * font_size);
+   
+           //sending the drop back to the top randomly after it has crossed the screen
+           //adding a randomness to the reset to make the drops scattered on the Y axis
+           if (drops[i] * font_size > c.height && Math.random > 5)
+               drops[i] = 30;
+   
+           //incrementing Y coordinate
+           drops[i]++;
+       }
+       setInterval(draw, 200);
+   }
+   
+   }
+   function timer() {
+       
+       var date = new Date();
+
+       let seconds = date.getSeconds();
+          
+           document.getElementById('timer').innerText =seconds;
+           
+     
+   }
+   
+   
+   function bet() {
+       setInterval(timer, 1000);
+    setInterval(binaryC, 200);
+   setInterval(get,0);
+   }
+</script>
+                  </html>
