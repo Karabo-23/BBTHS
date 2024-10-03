@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         
+         
+      }
+      body{
+         
+      background:#11B2A;
+      z-index: 2;
+         
+      }
+      
+      .footer {
+                    grid-area: ;
+                    text-align: center;
+                    height: 30%;
+                    background: linear-gradient(80deg,#191B2A,#191B2A,#333440);
+                    box-shadow: 0 0 12px grey;
+                    position: fixed;
+                    bottom: 0;
+                    transition: 5s;
+                    left: 0;
+                    right: 0;
+                 }
+                 .footer1 {
+                    grid-area: ;
+                    text-align: center;
+                    height: 20px;
+                    transition: 5s;
+                    font-weight: 900;
+                    color:grey;
+                    background: linear-gradient(97deg, #4C4E6B, #191B2A, #333440);
+                    box-shadow: 0 0 29px grey;
+                    position: fixed;
+                    bottom: 0;
+                 
+                    left: 0;
+                    right: 0;
+                 }
+     .exploreBtn{
+    width: 45%;
+    height: 40px;
+    padding: 5px;
+    margin:5px;
+
+    border-radius: 9px;
+    border: 1px solid grey;
+    font-weight:900;
+    font-size:14px;
+    color:white;
+    background: #AEA3A33D;
+}
+.loginBtn{
+   width: 20%;
+   height:35px;
+   float: left;
+   transition: 7s;
+   margin: 2px;
+   font-weight: 900;
+   color: #7B7B7B;
+   border-radius: 15px;
+   border:0.5px solid gold;
+   background: #0E0F1B;
+   
+}
+.loginBtn:hover{
+   
+}
+      .logoDv {
+         width: 100%;
+         background: linear-gradient(80deg,#191B2A,#333440);
+         background-image: ul("https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/Screenshot_20230922-173127-1.jpg?alt=media&token=64071710-5f4e-45d9-b1a0-0ead935b7421");
+         padding-bottom: 90%;
+         
+         background-size:100%;
+         
+      }     
+     .logo{
+        margin-top: 50%;
+        margin-left: 35%;
+        width: 115px;
+        height: 115px;
+        border-radius: 100%;
+        border: 1px solid gold;
+        box-shadow: 1px 1px 8px white;
+     }         
+     
+   
+   
+   .box li{
+   position: absolute;
+   display: block;
+   list-style: none;
+   z-index: 1;
+   animation: animate 9s  infinite;
+   bottom: -150px;  
+   text-align:center;
+   color:#fbe4bd;
+   box-sizing:border-box;
+   transform:rotateX(180deg) rotateY(45deg);
+   
+   }
+   .box li:nth-child(1){
+   left: 25%;
+   width: 15px;
+   height: 15px;
+       
+   }
+   
+   .box li:nth-child(2){
+   left: 10%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 2s;
+   animation-duration: 12s;
+   }
+   .box li:nth-child(3){
+   left: 70%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 4s;
+   }
+   .box li:nth-child(4){
+   left: 40%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 0s;
+   animation-duration: 18s;
+   }
+   .box li:nth-child(5){
+   left: 65%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 0s;
+   }
+   .box li:nth-child(6){
+   left: 75%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 3s;
+   }
+   .box li:nth-child(7){
+   left: 35%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 7s;
+   }
+   .box li:nth-child(8){
+   left: 50%;
+   width: 2px;
+   height: 2px;
+   animation-delay: 15s;
+   animation-duration: 45s;
+   }
+   .box li:nth-child(9){
+   left: 20%;
+   width: 2px;
+   height: 2px;
+   animation-delay: 2s;
+   animation-duration: 35s;
+   }
+   .box li:nth-child(10){
+   left: 85%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 0s;
+   animation-duration: 11s;
+   }
+   .box li:nth-child(11){
+   left: 25%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 0s;
+   
+   }
+   
+   .box li:nth-child(12){
+   left: 10%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 2s;
+   animation-duration: 17s;
+   }
+   .box li:nth-child(13){
+   left: 70%;
+   width:   15px;
+   height: 15px;
+   animation-delay: 8s;
+   }
+   .box li:nth-child(14){
+   left: 40%;
+   width: 15px;
+   height:  15px;
+   animation-delay: 0s;
+   animation-duration: 12s;
+   }
+   .box li:nth-child(15){
+   left: 65%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 9s;
+   }
+   .box li:nth-child(16){
+   left: 75%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 17s;
+   }
+   .box li:nth-child(17){
+   left: 35%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 20s;
+   }
+   .box li:nth-child(18){
+   left: 50%;
+   width:   15px;
+   height: 15px;
+   animation-delay: 1s;
+   animation-duration: 45s;
+   }
+   .box li:nth-child(19){
+   left: 20%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 2s;
+   animation-duration: 15s;
+   }
+   .box li:nth-child(20){
+   left: 85%;
+   width: 15px;
+   height:15px;
+   animation-delay: 0s;
+   animation-duration: 10s;
+   }
+   
+   
+   .box li:nth-child(22){
+   left: 10%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 12s;
+   animation-duration: 21s;
+   }
+   .box li:nth-child(23){
+   left: 70%;
+   width: 15px;
+   height:  15px;
+   animation-delay: 14s;
+   }
+   .box li:nth-child(24){
+   left: 40%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 10s;
+   animation-duration: 8s;
+   }
+   .box li:nth-child(25){
+   left: 65%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 10s;
+   }
+   .box li:nth-child(26){
+   left: 75%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 13s;
+   }
+   .box li:nth-child(27){
+   left: 35%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 7s;
+   }
+   .box li:nth-child(28){
+   left: 50%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 10s;
+   animation-duration: 5s;
+   }
+   .box li:nth-child(29){
+   left: 20%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 21s;
+   animation-duration: 25s;
+   }
+   .box li:nth-child(30){
+   left: 85%;
+   width: 15px;
+   height: 15px;
+   animation-delay: 0s;
+   animation-duration: 21s;
+
+   }
+   
+   @keyframes animate {
+   0%{
+   transform: translateY(0) rotateX(720deg);
+   color: gold;
+   opacity: 90;
+   font-weight: 1000;
+   border-radius: 0;
+   }
+   50%{
+         box-shadow: 0 0 30px black;
+         
+         color: black;
+      
+      
+   }
+   53%{
+         box-shadow: 0 0px 7px gold;
+         color:black;
+   }
+   90%{
+         box-shadow: 0 0px 50px gold;
+      
+   }
+   100%{
+      color:#FFC002;
+   transform: translateY(-500px) rotateY(720deg);
+   opacity: 0;
+   
+   border-radius: 99%;
+   }
+   }
+   a{
+      text-decoration: none;
+      font-weight: 900;
+      color: grey;
+   }
+   label{
+      color: white;
+      font-weight:900;
+      
+      
+   }
+   	.loader {
+			border: 4px solid transparent; /* Light grey */
+			border-top: 4px solid #42445A;
+			margin-top: 0;
+			margin-left: 0;
+         box-shadow: 0 0px 3px gold;
+			width: 9px;
+			z-index: 4;
+			position: fixed;
+			height: 2px;
+			animation: spin 20s linear infinite;
+		}
+
+		@keyframes spin {
+			0% {
+				padding-right: 0;
+			
+			}
+			100% {
+            padding-right: 100%;
+			
+			}
+		}
+   </style>
+</head>
+<body >
+   <div class="loader"></div>
+         	
+
+
+
+
+
+
+   <div class="logoDv" onclick="document.getElementById('footer').style.height='20px';" >
+
+      <img src="https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/1722686659551.jpg?alt=media&token=33637501-001a-4cdf-9b3e-a895c85905c1" alt="" class="logo">
+      
+      <br>
+      <label style="margin-left:30%;">
+      Bopedi Bapedi T.H.S
+      <br>
+      
+      <p style="margin-left: 35%;font-size:9px;color:grey;">school announcement app</p>
+      </label>
+   </div>
+   
+   <footer class="footer" id="cdOpen">
+      
+      <button class="exploreBtn">
+         Explore app
+      </button>
+      <br>
+      <button class="loginBtn" onclick="load()">
+         <a href="
+https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/sign%20in.html?alt=media&token=0370653f-1a3c-42a8-aa18-6ffc3a16185d">Login</a> 
+      </button>
+      <br>
+      <br>
+            <button class="loginBtn" >
+               sign up
+            </button>
+              <div class="box" id="box" >
+   <ul >
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li></li>
+   <li ></li>
+   <li onclick="alert('someone out there loves you')"></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li onclick="document.getElementById('footer').style.height='400px';"></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li></li>
+   <li ></li>
+   <li ></li>
+   <li ></li>
+   <li></li>
+   <li ></li>
+   <li onclick="alert('firebase projects:rare-5f47e')"></li>
+   <li onclick="alert('app pin:9067')"></li>
+   <li onclick="alert('love yourself before loving others')"></li>
+   <li onclick="alert('your smile broghtens everyones day')"></li>
+   <li onclick="alert('you are beatiful')"></li>
+   </ul>
+   </div>
+            
+            
+   </footer>
+<footer class="footer1" id="footer">
+ <b style="color: blue;">undefined</b><b style="color: red;"> flare</b>
+
+ <div class="container">
+    <div id="evaluations">loading...</div>
+    
+ </div>
+</footer>
+
+</body>
+
+</html>
+    <script>
+           
+       const loader = document.querySelector('.loader');
+       const links = document.querySelectorAll('.loginBtn');
+       
+       links.forEach(link => {
+          link.addEventListener('click', () => {
+             loader.style.display = 'block';
+          });
+       });
+       
+       window.addEventListener('load', () => {
+          loader.style.display = 'none';
+       });
+       document.addEventListener("DOMContentLoaded", function() {
+          document.querySelector(".loader").style.display = "none";
+       });
+       
+       
+       // Initialize Firebase
+       const firebaseConfig = {
+          apiKey: "AIzaSyBSMvHpZ0_VkqWjJ94UMa6vqEhFiqrsIWM",
+          authDomain: "rare-5f47e.firebaseapp.com",
+          projectId: "rare-5f47e",
+          storageBucket: "rare-5f47e.appspot.com",
+          messagingSenderId: "811727087812",
+          appId: "1:811727087812:web:d362e68abf6c26acf24191",
+          measurementId: "G-DE59771G7Q"
+       };
+
+
+       const app = firebase.initializeApp(firebaseConfig);
+       const database = firebase.database();
+
+       // Function to read data from Firebase Realtime Database
+       const readData = () => {
+          const dbRef = firebase.database().ref('evaluations');
+          dbRef.on('value', (data) => {
+             const evaluations = data.val();
+             const evaluationsHtml = Object.keys(evaluations).map((key) => {
+                const evaluation = evaluations[key];
+                return `
+                        <div class="evaluate">
+                            <h3>Teacher ${key}</h3>
+                            <hr>
+                            <p><b>Teacher Name:</b> ${evaluation.teacherName}</p>
+                            <p>Rating: ${evaluation.rating}/5</p>
+                            <p>Feedback: ${evaluation.feedback}</p>
+                        </div>
+                    `;
+             }).join('');
+             document.getElementById('evaluations').innerHTML = evaluationsHtml;
+          });
+       };
+
+       // Read data from Firebase Realtime Database
+       readData();
+
+    </script>

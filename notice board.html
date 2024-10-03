@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+      <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script> 
+  <title></title>
+  <style>
+
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+       background: #64667E;
+       background-size: 100%;
+       max-width: 100%;
+       
+    }
+    
+      header{
+        background: linear-gradient(79deg,#42445A,#1D1F34,#0F1127);
+        height: 30px;
+        
+      }
+       .profileImg {
+         margin-top: 15px;
+         margin-left: 40%;
+         width: 80px;
+         height: 80px;
+         border-radius: 100%;
+         border: 2px solid #fff;
+         box-shadow: 1px 1px 8px #000;
+       }
+       .profileName2{
+         margin-left: 30%;
+          font-weight: 900;
+       }
+       
+        .icButton {
+          border: 1px solid black;
+          float: left;
+        
+          height: 70px;
+          width: 30%;
+          margin: 3px;
+          text-align: center;
+          font-size: 2em;
+          background-color: #32344C;
+          border-radius: 12px;
+    
+          box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-right: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(25px);
+          border-radius: 10px;
+          
+    
+    
+        }
+    
+        .icDiv{
+          
+           
+        }
+    
+    
+    
+         hr{
+         border: 2px solid #1B1D34;
+           background: #1D203E;
+         }
+         
+         
+         .post{
+             
+            border:1px solid black;
+            display:block;
+           word-wrap:break-word;
+          overflow-wrap:break-word;
+           padding: 9.999px;
+            height:auto;
+            width:90%;
+            margin: 5%;
+            margin-left: 5%;
+            text-align:center;
+            font-size:2em;
+            background:transparent;
+            
+            box-sizing:border-box;
+            border-radius:12px;
+            
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border-radius: 10px;
+            border:solid #42445A;
+            display: flex;
+            justify-content: center;
+            
+            overflow: hidden;
+          
+    
+           
+         }
+            .noticeImg {
+              margin-top: 15px;
+
+              width: 50px;
+              height: 50px;
+              border-radius: 100%;
+              border: 2px solid #fff;
+              box-shadow: 1px 1px 8px #000;
+            }
+            
+            .postContent{
+              font-size:    14px;
+              color: black;
+              font-weight: 900;
+             
+            }
+            .profile{
+               background: linear-gradient(87deg,#32344C,#161931,#4C4E6B);
+                max-height:   100%;
+               background-size: 100%;
+            }
+            
+                 footer {
+                    grid-area: ;
+                    text-align: center;
+                    height: 30px;
+                    background: white;
+                    box-shadow: 0 0 12px grey;
+                    position: fixed;
+                    bottom: 0;
+                                background: linear-gradient(97deg,#2C2D3D,#323553,#2D344B);
+                    left: 0;
+                    right: 0;
+                 }
+            
+            
+            
+          .item{
+          height:50px;
+          width:100%;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          
+
+          }
+          .icon{
+          height:20px;
+          width:20px;
+          border-radius:50%;
+          z-index:1;
+          margin-top: 10px;
+          border-radius: 50px;
+          border:1px solid gold;
+          background: #00000057;
+          width: 41px;
+          height: 41px;
+          
+          }
+          .name{
+          color:gray;
+          font-size:1rem;
+          font-weight:bold;
+          text-align:center;
+          text-transform:uppercase;
+          transition:opacity 0.8s;
+          position:absolute;
+          opacity:0;
+          visibility:hidden;
+          }
+          .item:hover > .icon{
+          transition: 3s;
+          border-radius: 50px;
+          border:1px solid #46485F;
+          background: #262734;
+          width: 41px;
+          height: 41px;
+          
+          }
+          .item:hover > .name{
+          transform:translateY(90%);
+          opacity:1;
+          visibility:visible;
+          margin-top:5px;
+          } 
+         .poster{
+            border:1px solid black;
+            display:block;
+
+            height:255px;
+            width:0%;
+            
+
+            text-align:center;
+            font-size:2em;
+            background: linear-gradient(97deg,#2C2D3D,#323553,#2D344B);
+            box-sizing:border-box;
+            border-radius:12px;
+            
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border-radius: 10px;
+            border:solid #42445A;
+
+            display: flex;
+            transition: 1s;
+            position:fixed;
+            overflow-x: hidden;
+            z-index: 2;
+            
+         }
+         #message-input{
+            height: 190px;
+            width: 90%;
+            float: left;
+            border: none;
+            
+            background: #2C2D3D;
+            border-radius: 9px;
+         }
+         button{
+            transition: 3s;
+          border-radius: 50px;
+          border:2px solid #0A0B12;
+          background: #262734;
+          width: 51px;
+          height: 51px;
+          
+            
+         }
+         
+
+            .container {
+padding:30px;
+color:white;
+}
+
+select   {
+background-color:transparent;
+border-top-color:transparent;
+border-left-color:transparent;
+border-right-color:transparent;
+color:white;
+font-size:19px;
+width:60%;
+}
+.p{
+transform:rotateY(180deg);
+float:left;
+font-size:40px;
+color:white;
+font-weight:100;
+}
+.title {
+padding-top:10px;
+font-weight:500;
+font-size:30px;
+color:white;
+background-color:#413c40;
+width:100%;
+height:40px;
+box-shadow:12px 0px 20px black;
+}
+.line {
+margin-left:20px;
+margin-right:20px;
+border-color:gold;
+}
+.settings{
+   background: #42445A;
+   display: none;
+   width:   100%;
+   height: 100%;
+   transition: 2s;
+   justify-content: center;
+   transition: 5s;
+   position:fixed;
+
+   z-index: 3;
+   
+}
+.timeDiv{
+   background:#F9F9FF21;
+   width:30%;
+   border-radius: 7%;
+   
+   border: 2px solid #343549;
+   
+   box-shadow: 2px 2px 2px #42445A;
+   color: white;
+   font-weight: 500;
+   font-family: tahoma;
+   text-align: center;
+   height: auto;
+}
+            
+            
+  </style>
+  
+</head>
+<header>
+  <!--Tab to edit-->
+
+
+
+  
+  
+  
+</header>
+
+
+<body id="body">
+   
+ <div class="settings" id="settings">
+
+
+     <p class="p" onclick="closeSettings()">&#10140 </p>
+     <header class="title">
+        Settings</header>
+
+
+
+
+    
+     <div class="container">
+        <label>Background:</label><br>
+        <br>
+        <select id="backgroundSelector">
+           <option value="linear-gradient(79deg,#42445A,#1D1F34,#0F1127)">grey scale</option>
+           <option value="linear-gradient(79deg,black,#1B1C2F,#1B1C2F)   ">dark sphere</option>
+           <option value="white">white</option>
+           <option value="">chat background</option>     
+        </select>
+     </div>
+     <hr class="line">
+     <div class="container">
+        <label>font-style:</label><br>
+        <br>
+        <select>
+           <option value="tahoma">Tahoma</option>
+           <option value="cursive">cursive</option>
+        </select>
+     </div>
+     <hr class="line">
+     <div class="container">
+        <input type="checkbox" class="ckpb"><br>Better support for East Asian ,middle Asian,<br>south Asian
+        Middle earstern(slow on big texts!).
+
+     </div>
+     <hr class="line">
+
+
+
+  </div>
+
+   
+   
+   
+<div class="profile">
+  <img src="https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/1722686659551.jpg?alt=media&token=baecfd79-f36a-431e-b78c-aac4ca5eeb22" alt="" class="profileImg">
+  <p class="profileName2" id="user-name">school notice board</p>
+   <div class="icDiv" style="background: red;">
+  <hr>
+     <!--Tab to edit-->
+  
+       <div class="icButton">
+          
+          <svg class="icon" onclick="openSettings()" viewBox="0 0 24 24" fill="#ffffff"><path d="M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8M12,10A2,2 0 0,0 10,12A2,2 0 0,0 12,14A2,2 0 0,0 14,12A2,2 0 0,0 12,10M10,22C9.75,22 9.54,21.82 9.5,21.58L9.13,18.93C8.5,18.68 7.96,18.34 7.44,17.94L4.95,18.95C4.73,19.03 4.46,18.95 4.34,18.73L2.34,15.27C2.21,15.05 2.27,14.78 2.46,14.63L4.57,12.97L4.5,12L4.57,11L2.46,9.37C2.27,9.22 2.21,8.95 2.34,8.73L4.34,5.27C4.46,5.05 4.73,4.96 4.95,5.05L7.44,6.05C7.96,5.66 8.5,5.32 9.13,5.07L9.5,2.42C9.54,2.18 9.75,2 10,2H14C14.25,2 14.46,2.18 14.5,2.42L14.87,5.07C15.5,5.32 16.04,5.66 16.56,6.05L19.05,5.05C19.27,4.96 19.54,5.05 19.66,5.27L21.66,8.73C21.79,8.95 21.73,9.22 21.54,9.37L19.43,11L19.5,12L19.43,13L21.54,14.63C21.73,14.78 21.79,15.05 21.66,15.27L19.66,18.73C19.54,18.95 19.27,19.04 19.05,18.95L16.56,17.95C16.04,18.34 15.5,18.68 14.87,18.93L14.5,21.58C14.46,21.82 14.25,22 14,22H10M11.25,4L10.88,6.61C9.68,6.86 8.62,7.5 7.85,8.39L5.44,7.35L4.69,8.65L6.8,10.2C6.4,11.37 6.4,12.64 6.8,13.8L4.68,15.36L5.43,16.66L7.86,15.62C8.63,16.5 9.68,17.14 10.87,17.38L11.24,20H12.76L13.13,17.39C14.32,17.14 15.37,16.5 16.14,15.62L18.57,16.66L19.32,15.36L17.2,13.81C17.6,12.64 17.6,11.37 17.2,10.2L19.31,8.65L18.56,7.35L16.15,8.39C15.38,7.5 14.32,6.86 13.12,6.62L12.75,4H11.25Z"/></svg>
+               <span class="name"  onclick="openSettings()">Settings</span>
+          
+       </div>
+  
+       <div class="icButton">
+          
+               <svg class="icon"  viewBox="0 0 24 24" fill="#ffffff"><path d="M12 5.69L17 10.19V18H15V12H9V18H7V10.19L12 5.69M12 3L2 12H5V20H11V14H13V20H19V12H22L12 3Z"/></svg>
+               <span class="name">Home</span>
+          
+       </div>
+  
+       <div class="icButton" onclick="openPoster()">
+          
+                         <svg class="icon"  viewBox="0 0 24 24" fill="#ffffff"><path d="     
+               
+               M20 2H4C2.9 2 2 2.9 2 4V22L6 18H20C21.1 18 22 17.1 22 16V4C22 2.9 21.1 2 20 2M20 16H5.2L4 17.2V4H20V16Z
+               
+               
+               "/></svg>
+               <span class="name">Home</span>
+          
+       </div>
+     </div>
+     </div>
+  </div>
+ 
+     <div class="poster" id="poster">
+      <!--Tab to edit-->
+      <form id="message-form">
+         <textarea type="text" id="message-input" placeholder="Type your message..."></textarea>
+         <button type="submit">Send</button>
+      </form>
+      
+      
+   </div>
+
+      <!--Tab to edit-->
+
+   <!--Tab to edit-->
+
+<div id="chat-box">
+   
+   
+   
+</div>
+
+ 
+
+
+
+
+
+
+
+<br>
+<br>
+<br>
+<br>
+</body>
+<footer>
+       <p> <b style="color:blue "> undefined</b>  <b style="color: red">flare</b> </p>
+   
+</footer>
+
+
+
+
+</html>
+                     <script >
+                     
+
+                     function openSettings() {
+                        document.getElementById('settings').style.display = 'block';
+                     
+                     
+                     }
+                     
+                     function closeSettings(){
+                        var backgroundSelector = document.getElementById('backgroundSelector').value;
+                        document.getElementById('settings').style.display = 'none';
+                     
+                     
+                        document.getElementById('body').style.background= backgroundSelector;
+                     }
+                     
+
+                        // Firebase configuration
+                        var firebaseConfig = {
+                           apiKey: "AIzaSyBSMvHpZ0_VkqWjJ94UMa6vqEhFiqrsIWM",
+                           authDomain: "rare-5f47e.firebaseapp.com",
+                           projectId: "rare-5f47e",
+                           storageBucket: "rare-5f47e.appspot.com",
+                           messagingSenderId: "811727087812",
+                           appId: "1:811727087812:web:d362e68abf6c26acf24191",
+                           measurementId: "G-DE59771G7Q"
+                        };
+                  
+                        // Initialize Firebase
+                        firebase.initializeApp(firebaseConfig);
+                  
+                        // Reference to the Firebase database
+                        var database = firebase.database().ref("messages");
+                  
+                        // Reference to the Firebase storage
+                        var storageRef = firebase.storage().ref();
+                  
+                        // Function to select file
+                        function selectFile() {
+                           var fileInput = document.getElementById("file-input");
+                           fileInput.click(); // Trigger file input click event
+                        }
+                  
+                        // Function to handle file selection
+                        function handleFileSelect(event) {
+                           var file = event.target.files[0];
+                           var reader = new FileReader();
+                  
+                           reader.onload = function(upload) {
+                              var url = upload.target.result;
+                              console.log("Selected file URL:", url);
+                              // You can perform further actions with the file URL here
+                           };
+                  
+                           reader.readAsDataURL(file);
+                        }
+                  
+                        // Attach event listener to file input
+                  
+                        // Function to send a message
+                        function displayUserMessage() {
+                           var messageInput = document.getElementById("message-input");
+                           var message = messageInput.value.trim();
+                  
+                           // Rest of your code for sending messages...
+                        }
+                  
+                        // Function to display messages
+                        database.on("child_added", function(snapshot) {
+                           var messageData = snapshot.val();
+                           var message = messageData.message;
+                           var timestamp = new Date(messageData.timestamp).toLocaleString(); // Convert timestamp to readable format
+                           var chatBox = document.getElementById("chat-box");
+                           chatBox.innerHTML += '<div class="timeDiv">'+ '<label for="">'+timestamp+'</label>'+'</div>'+'<div class="post">' + 
+                              '<p class="postContent">' + message +
+                  '</div>';
+                        });
+                        function openPoster(){
+                           
+                           document.getElementById('poster').style.width="90%";
+                           
+                        }
+                        
+                        
+
+                        // Reference to the Firebase database
+                        var database = firebase.database().ref("messages");
+                        
+                        // Function to send a message
+                        function displayUserMessage(message) {
+                           // Push message to Firebase database
+                           database.push().set({
+                                 message: message,
+                                 timestamp: firebase.database.ServerValue.TIMESTAMP
+                              })
+                              .then(function() {
+                                 console.log("Message sent successfully");
+                              })
+                              .catch(function(error) {
+                                 console.error("Error sending message:", error);
+                                 alert("Failed to send message. Please try again.");
+                              });
+                        }
+                        
+                        // Handle form submission
+                        document.getElementById("message-form").addEventListener("submit", function(event) {
+                           event.preventDefault(); // Prevent form submission
+                        
+                           var messageInput = document.getElementById("message-input");
+                           var message = messageInput.value.trim();
+                        
+                           // Check if message is not empty
+                           if (message !== "") {
+                              displayUserMessage(message);
+                              messageInput.value = ""; // Clear input field
+                           }
+                           document.getElementById('poster').style.width='0%';
+                        });
+                        
+                     
+                     
+                     
+                     
+                     </script>
+                     
+                     
+                     

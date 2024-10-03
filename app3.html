@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+<style>
+    
+    *{
+margin: 0;
+padding: 0;
+      
+    }
+    body{
+background: linear-gradient(79deg,#42445A,#1D1F34,#0F1127);
+  
+    }
+    header{
+      background: linear-gradient(79deg,#737693,#1D1F34,#0F1127);
+     border-bottom: 4px solid #343549;
+     border-top: 4px solid #343549;
+     box-shadow: 2px 4px 8px #42445A;
+
+    }
+    footer {
+      grid-area: ;
+      text-align: center;
+      height:4%;
+      background: #212337;
+      box-shadow: 0 0 9px grey;
+      position:fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+              .ftNav{
+          width:100%;
+          background-color:white;
+          display:flex;
+          height: 20%;
+         
+          
+          }
+          .item{
+          height:50px;
+          width:100%;
+         
+          display:flex;
+          align-items:center;
+          justify-content:center;
+
+          }
+          .icon{
+          
+          height: 100px;
+          width:50%;
+          padding: 5%;
+      
+          transition:1s;
+          z-index:1;
+          
+          }
+                    
+             .icon-card i {
+                   font-size: 48px;
+                   color: #282B4B;
+                   margin-bottom: 10px;
+                
+                   background-color: rgba(255, 255, 255, 0.9);
+                   box-shadow: 0 2px 3px #2C2E3E;
+                   border-radius: 30%;
+                   transition: 0.9s;
+                     
+                  
+                    }
+                    .icon-card:hover{
+                       border: 3px solid ;
+                       box-shadow: inset 0px 0px   2px ;
+                       border-radius: 15%;
+                    }
+                    
+          .name{
+          color:gray;
+          font-size:16px;
+          font-weight:900;
+          text-align:center;
+          text-transform:uppercase;
+          transition:opacity 8s;
+          position:absolute;
+          opacity:0;
+          visibility:hidden;
+          }
+          .item:hover > .icon{
+            color:#25273D;
+          transform:translateY(-20%) rotateY(360deg);
+          
+          }
+          .item:hover > .name{
+          transform:translateY(0%);
+          opacity:1;
+          
+          visibility:visible;
+          z-index: 2;
+          margin-top:5px;
+          } 
+          
+          .profileImg {
+      
+            width: 65px;
+            
+            height: 65px; 
+            
+            border-radius: 50%;
+            border:  0.5px solid #fff;
+            box-shadow: 1px 1px 8px #000;
+          }
+          .profileName{
+            color:white;
+            font-weight:500;
+            
+          }
+          /* Notice shit*/
+          .noticeDiv{
+            
+      
+
+            height:120px;
+            width:80%;
+            
+            margin: 10%;
+            text-align:center;
+            font-size:17px;
+            background-color: rgba(255, 255, 255, 0.09);
+            padding: 3%;
+            border-radius:12px;
+            
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border:solid #42445A;
+            display: flex;
+            justify-content: center;
+            
+            
+          }
+    
+              .noticeImg {
+                margin-top: 15px;
+                
+                width: 65px;
+                height: 65px;
+                border-radius: 100%;
+                border: 2px solid #fff;
+                box-shadow: 1px 1px 8px #000;
+              }
+    .noticeNav{
+      font-size: 9px;
+      
+    }
+    .noticeButton{
+      box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-right: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(25px);
+      border-radius:  9px;
+      width:100px;
+     font-weight: 500;
+      height:35px;
+      background:#050827;
+      font-size: 17px;
+      color: white;
+    }
+    
+    /* semi upper body */
+    
+    .suDiv{
+       display: flex;
+      height: auto;
+      padding: 7px;
+      width: auto;
+        box-shadow: 1px 1px 9px white;
+       background:white;
+    }
+     
+     
+         .suImg {
+
+           width:7%;
+           padding:9%;
+           background: white;
+           margin-left: 10%;
+           border-radius: 90%;
+           border: 0.5px solid white;
+           box-shadow: 1px 1px 8px #C9C9C9;
+         }
+    
+    
+
+    
+    .icDiv{
+         width: 100%;
+         box-shadow: 2px 2px 12px black;
+         background: white;
+         height:  100%;
+      
+     padding-bottom: 100%;
+    }
+    
+    
+        .icButton {
+          
+          float: left;
+          height:90px ;
+          padding: 4%;
+          width: 30%;
+          
+          margin:    15px;
+          
+          text-align: center;
+          font-size: 12px;
+          background-color: rgba(255, 255, 255, 0.9);
+          
+          border-radius: 12px;
+          font-weight: 900;
+           box-shadow: 0px 0px 8px #B4B4BE;
+          border: 2px solid rgba(255, 255, 255, 0.9);
+          border-left: 2px solid rgba(255, 255, 255, 9);
+          border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+    
+    
+        }
+   .icButton:hover{
+      transform: translateY(-0.5px);
+     box-shadow:2px 3px 9px #B4B4BE;
+      color:black;
+      
+   }
+        .icImg{
+           width:40px;
+           height: 40px;
+           border: 1px solid gold;
+           border-radius: 9px;
+           transition: 0.6s;
+           z-index: 1;
+        
+        }
+           .settings-container {
+              width: 100%;
+              display: none;
+              top: 0;
+              height:150%;
+              
+              position: fixed;
+              z-index: 3;
+              background: linear-gradient(79deg, #42445A, #1D1F34, #0F1127);
+              box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           }
+       
+           
+       
+           h2 {
+              border-bottom: 2px solid #2c3e50;
+              padding-bottom: 0.5em;
+              margin-bottom: 1em;
+           }
+           a{
+              text-decoration: none;
+              color:white;;
+              font-weight: 300;
+              
+           }
+
+           button {
+              padding: 1.45px;
+              background-color: #2c3e50;
+              color: white;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+           }
+       
+           button:hover {
+              background-color: #34495e;
+           }
+           .lightbox {
+     display: table; 
+     position: fixed;
+     top: -100%; 
+     left: 0;
+     width: 100%;
+     height: 100%;
+    background: #24252FC2;
+   
+     background-size:100% 10%;
+     z-index:3;
+     border-bottom: 2px;
+     transition: 2s;
+     }
+     .lightbox:target {
+     top: 0; 
+     }
+     .lightbox-content {
+     display: table-cell;
+     vertical-align: middle;u
+     text-align: center;
+     }
+     .lbProfilePic{
+        width:100%;
+       
+        height: 100%;
+     }
+      .icon-card {
+         background: white;
+         border-radius: 10px;
+         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+         margin: 15px;
+      
+         text-align: center;
+         width: 120px;
+      }
+             .container {
+            max-width: 1200px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            
+            
+        }
+        .section {
+            margin: 7%;
+            top: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .section:hover {
+            transform: scale(1.04);
+            
+        }
+        h1, h2 {
+            color: white;
+            font-weight: 900;
+            text-shadow: 0 6px 12px black;
+                       padding: 15px;
+                       text-align: center;
+                       color: white;
+                       font-size: 23px;
+                       font-weight: 900;
+        }
+        .animated-text {
+          opacity:1;
+            animation:animate 7s 1;
+        }
+    
+          .subButton {
+            background: #2F303E73;
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            padding: 2%;
+            text-align: center;
+            width: 100px;
+            margin: 20px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+    
+        }
+   .subButton:hover{
+      transform: scale(1.05);
+      box-shadow:0 0 12px grey;
+      
+   }
+   .loader {
+      border: 4px solid transparent;
+      border-top: 4px solid #42445A;
+      margin-top: 0;
+      margin-left: 0;
+      box-shadow: 0 0px 3px gold;
+      width: 9px;
+      z-index: 1;
+      position: fixed;
+      height: 2px;
+      animation: spin 90s linear infinite;
+    }
+    @keyframes spin {
+      0% {
+        padding-right: 0;
+      }
+      100% {
+          box-shadow: 0 0px 30px gold;
+        padding-right: 100%;
+      }
+    }
+	#editor {
+			width: 90%;
+			height: 150px;
+			padding: 10px;
+			border-radius: 10px;
+			
+			box-shadow: 0px 0px 8px #232537;
+			border: 1px solid #ccc;
+			font-size: 12px;
+			margin-bottom: 20px;
+		}
+		
+		input[type="number"] {
+		    width: 100%;
+		    height: 30px;
+		    padding: 5px;
+		    margin-bottom: 20px;
+		    border-radius: 5px;
+		    border: none;
+		    background: #AEA3A33D;
+		}
+
+		
+		#settings {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		#settings li {
+			margin-bottom: 10px;
+		}
+		#settings label {
+			display: block;
+			margin-bottom: 5px;
+		}
+		#container {
+        float: left;
+          color:#141520;
+          font-weight: 700;
+          padding: 3%;
+          width: 80%;
+          position: ;
+          margin:15px;
+          margin-left: 0;
+          text-align: center;
+          
+          
+          overflow: hidden;
+          border-radius: 12px;
+          font-weight: 500;
+           box-shadow: 0px 0px 8px #232537;
+    
+
+    
+}
+
+.setButton{
+background: #328230;
+z-index:1;
+font-weight: 400;
+font-size: 12px;
+color:white;
+
+border-radius: 10px;
+border: none;
+transition: 3s;
+width:35%;
+height: 30px;
+
+}
+		       .cdButton {
+
+		           float: left;
+		           height: 90px;
+		           padding: 3%;
+		           width: 30%;
+
+		           margin: 15px;
+
+		           text-align: center;
+		           font-size: 7px;
+		           background-color: rgba(255, 255, 255, 0.9);
+		           overflow: hidden;
+		           border-radius: 12px;
+		           font-weight: 500;
+		           box-shadow: 0px 0px 8px #B4B4BE;
+		           border: 2px solid rgba(255, 255, 255, 0.9);
+		           border-left: 2px solid rgba(255, 255, 255, 9);
+		           border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+
+
+		       }
+  </style>
+  
+  
+</head>
+  <div class="loader"></div>
+<header>
+  <!--Tab to edit-->
+   
+  <a href="#openProfile" >
+  <img src=""  class="profileImg" id="profile-picture">
+  </a>
+  <a class="profileName" id="user-info">
+   
+
+ bopedibapedi@gmail.com
+</a >  
+  
+  
+  
+    
+   <div class="lightbox" id="openProfile">
+      
+   <img src=""  class="lbProfilePic" id="profileP2">
+      
+      
+</div>
+ 
+  
+</header>
+
+<body>
+  <div class="noticeDiv">
+    
+
+    <span class="noticeNav">
+      
+            <img src="https://firebasestorage.googleapis.com/v0/b/rare-5f47e.appspot.com/o/1722686659551.jpg?alt=media&token=baecfd79-f36a-431e-b78c-aac4ca5eeb22" alt="" class="noticeImg">
+     PRESS TO VIEW LATEST ANNOUNCEMENTS
+         <button class="noticeButton" >
+          <a href="notice.html">Notice</a>
+         </button>
+    </span>
+
+  </div>
+  
+  <br>
+  
+  <div class="suDiv">
+<button src=""  class="suImg" onclick="document.getElementById('mainSet2').style.display='block';"></button>
+<button src="" alt="" class="suImg"></button>
+<button src="" alt="" class="suImg"></button>
+  </div>
+
+     <div class="icDiv">
+       
+       <div class="icButton">
+           <div class="item" >
+  <div class="icon-card">
+                   <i class="fas fa-book" style="font-size:40px"></i>
+              
+                </div>
+           </div>
+           <br>
+           <p>
+          Grade 12 study material
+           </p>
+          </div>
+       
+         <div class="icButton" onclick="document.getElementById('mainSet').style.display='block';">
+             <div class="item" >
+                <div class="icon-card">
+           <i class="fas fa-school" style="font-size: 30px;"></i>
+                         <i class="fas fa-info-circle" style="font-size: 30px"></i>
+                         </div>
+            </div>
+            <br>
+            <p>
+            About school
+            </p>
+         </div>
+         
+           <div class="icButton">
+              <div class="item">
+        <div class="icon-card">
+           <!-- Using Font Awesome icons for teacher and evaluation -->
+           <i class="fas fa-chalkboard-teacher" style="font-size: 30px;"></i>
+           <i class="fas fa-check-circle" style="font-size: 30px"></i>
+          
+        </div>
+              </div>
+              <br>
+              <p>
+              Teacher evaluater
+              </p>
+              </div>
+           
+             <div class="icButton" onclick="document.getElementById('mainSet1').style.display='block';">
+                <div class="item">
+                   <!--Tab to edit-->
+                
+  <div class="icon-card" >
+  <i class="fas fa-calculator" style="font-size: 30px;"></i>
+   <i class="fas fa-flask" style="font-size: 30px"></i>
+                       </div>
+                       
+                  </div>
+                <br>
+                <p>
+                   School Subject
+                </p>
+                </div>
+       
+       	<div  id="output" ></div>
+
+                       </div>
+  
+  
+  
+  
+</body>
+  <main class="settings-container" id="mainSet1">
+         <header onclick="document.getElementById('mainSet1').style.display='none';">
+        <h1>
+         School Streams
+        </h1>    
+         </header>
+     
+         <div class="container">
+            <div class="subButton" >
+               <!-- Math icon -->
+               <i class="fas fa-calculator"></i>
+               <h3>Accounting</h3>
+            </div>
+     
+            <div class="subButton" >
+               <!-- Science icon -->
+               <i class="fas fa-flask"></i>
+               <h3>Agricultural sciences</h3>
+            </div>
+     
+            <div class="subButton">
+               <!-- Literature icon -->
+               <i class="fas fa-book"></i>
+               <h3>Electrical(power systems)</h3>
+            </div>
+     
+            <div class="subButton">
+               <!-- History icon -->
+               <i class="fas fa-history"></i>
+               <h3>mechanical</h3>
+            </div>
+     
+     
+         </div>
+     
+         <footer>
+            <p> <b style="color:blue "> undefined</b> <b style="color: red">flare</b> </p>
+         </footer>
+  </main>
+
+
+<footer>
+  <main class="settings-container" id="mainSet">
+<header onclick="document.getElementById('mainSet').style.display='none';">
+        <h1><i class="fas fa-school"></i> About Our School</h1>
+    </header>
+    <div id="container">
+        <div class="section animated-text" id="mission">
+            <h2><i class="fas fa-bullhorn"></i> Our Mission</h2>
+            <p>Our school is dedicated to providing quality education and fostering a nurturing environment where students can achieve their full potential.</p>
+            
+        </div>
+        <div class="section animated-text" id="history">
+            <h2><i class="fas fa-history"></i> Our History</h2>
+            <p>Founded in 1990, our school has been a cornerstone of the community, providing excellent educational opportunities and enriching the lives of our students.</p>
+        </div>
+
+    </div>
+
+
+
+
+  </main>
+
+<main class="settings-container" id="mainSet2" style="background: white;" >
+    <header style="height:50px;" onclick="document.getElementById('mainSet2').style.display='none';">
+        <!--Tab to edit-->
+    </header>
+
+    	<div id="container">
+    <p onclick="document.getElementById ('editor').style.transform='translateY(0%)'">
+        close
+    </p>
+		<ul id="settings">
+			<li>
+				<label for="backgroundColor">Background Color:</label>
+				<input type="color" id="backgroundColor" value="#343549">
+			</li>
+			<li>
+				<label for="textColor">Text Color:</label>
+				<input type="color" id="textColor" value="#000000">
+			</li>
+			<li>
+				<label for="fontSize">Font Size:</label>
+				<input type="number" id="fontSize" value="16">
+			</li>
+		</ul>
+		
+      <textarea id="editor" onclick="style='transform:translateY(-100%)'" placeholder="SELF MODIFY THIS MOBILE APPLICATION BY INPUTING YOUR OWN CODES"></textarea>
+      <div id="buttons">
+          <button onclick="saveSettings()" class="setButton">Save Settings</button>
+          <button onclick="resetAll()" class="setButton" style="background: #343549">Reset Settings</button>
+      </div>
+        </div>
+    
+    
+    
+</main>
+<footer>
+   
+</footer>
+
+
+</html>
+
+<script>
+    	    // Default settings
+    	    var settings = {
+    	        backgroundColor: ' #343549',
+    	        textColor: '#000000',
+    	        fontSize: '16px'
+    	    };
+    
+    	    // Load saved settings
+    	    function saveSettings() {
+    	        var editor = document.getElementById('editor');
+    	        var code = editor.value;
+    	        var output = document.getElementById('output');
+    	        output.innerHTML = editor.value;
+    
+    	        try {
+    	            // Execute JavaScript code
+    	            eval(code);
+    	            alert('code execution passed ', code)
+    	        } catch (e) {
+    	         
+    	            console.error('Code execution failed:', e);
+    	        }
+    
+    	        // Save settings
+    	        settings.backgroundColor = document.getElementById('backgroundColor').value;
+    	        settings.textColor = document.getElementById('textColor').value;
+    	        settings.fontSize = document.getElementById('fontSize').value + 'px';
+    	        localStorage.settings = JSON.stringify(settings);
+    	        document.body.style.backgroundColor = settings.backgroundColor;
+    	        document.body.style.color = settings.textColor;
+    	        document.body.style.fontSize = settings.fontSize;
+    
+    	        if (document.getElementById('editor').value) {
+    	            localStorage.code = document.getElementById('editor').value;
+    	        }
+    	        localStorage.settings = JSON.stringify(settings);
+    
+             
+    	    }
+    
+    
+    
+    
+    
+    	    if (localStorage.settings) {
+    	        settings = JSON.parse(localStorage.settings);
+    	        document.body.style.backgroundColor = settings.backgroundColor;
+    	        document.body.style.color = settings.textColor;
+    	        document.body.style.fontSize = settings.fontSize;
+    	        document.getElementById('backgroundColor').value = settings.backgroundColor;
+    	        document.getElementById('textColor').value = settings.textColor;
+    	        document.getElementById('fontSize').value = settings.fontSize;
+    	        document.getElementById('output').innerHTML = localStorage.code; // Add this line
+    	        document.getElementById('editor').value = localStorage.code;
+    
+    	    };
+    
+    
+    	    function resetAll() {
+    	        // Reset settings
+    	       if(confirm('Are you sure you want to proceed? As this will erase all the modifications you made! ')){
+    	        settings = {
+    	            backgroundColor: ' #343549',
+    	            textColor: '#FFFFFF',
+    	            fontSize: '16'
+    	        };
+    
+    	        // Reset editor value
+    	        document.getElementById('output').innerHTML = '';
+    	        document.getElementById('editor').value = '';
+    
+    	        // Reset local storage
+    	        localStorage.removeItem('settings');
+    	        localStorage.removeItem('code');
+    
+    	        // Update UI
+    	        document.body.style.backgroundColor = settings.backgroundColor;
+    	        document.body.style.color = settings.textColor;
+    	        document.body.style.fontSize = settings.fontSize;
+    	        document.getElementById('backgroundColor').value = settings.backgroundColor;
+    	        document.getElementById('textColor').value = settings.textColor;
+    	        document.getElementById('fontSize').value = settings.fontSize;
+    	    }
+    	    };
+    	</script>
+</script>
+
+
+  <script type="module">
+  
+  
+  
+  
+  
+  
+  
+           function openn(){
+            alert('hhhhh');
+            window.location.href ='notice.html.htm';
+            
+         }
+         setTimeout('openn',2000);
+         
+         
+         
+         
+         
+     import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.4/firebase-app.js';
+     import { getAuth, signOut, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js';
+
+     const firebaseConfig = {
+        apiKey: "AIzaSyBSMvHpZ0_VkqWjJ94UMa6vqEhFiqrsIWM",
+        authDomain: "rare-5f47e.firebaseapp.com",
+        projectId: "rare-5f47e",
+        storageBucket: "rare-5f47e.appspot.com",
+        messagingSenderId: "811727087812",
+        appId: "1:811727087812:web:d362e68abf6c26acf24191",
+        measurementId: "G-DE59771G7Q"
+     };
+
+     const app = initializeApp(firebaseConfig);
+     const auth = getAuth(app);
+
+     const userInfo = document.getElementById("user-info");
+     const profilePicture = document.getElementById("profile-picture");
+     const logoutButton = document.getElementById("logout-button");
+
+     onAuthStateChanged(auth, (user) => {
+        if (user) {
+           userInfo.innerText = ` ${user.email}`;
+           if (user.photoURL) {
+              profilePicture.src = user.photoURL;
+              document.getElementById('profileP2').src=user.photoURL;
+
+           } else {
+              profilePicture.src = 'default-profile-picture-url'; 
+              window.location.href='sign in.html';
+           }
+        } 
+     });
+     
+     
+     
+     
+  </script>
