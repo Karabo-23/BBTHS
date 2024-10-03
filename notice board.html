@@ -7,7 +7,7 @@
       <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-database.js"></script>
       <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-storage.js"></script> 
-  <title></title>
+  <title>BBTHS notice board</title>
   <style>
 
     *{
@@ -18,7 +18,7 @@
        background: #64667E;
        background-size: 100%;
        max-width: 100%;
-       
+       color:white;
     }
     
       header{
@@ -38,6 +38,7 @@
        .profileName2{
          margin-left: 30%;
           font-weight: 900;
+          color:white;
        }
        
         .icButton {
@@ -88,24 +89,22 @@
             margin: 5%;
             margin-left: 5%;
             text-align:center;
-            font-size:2em;
-            background:transparent;
+            font-weight: 440;
+            font-size:12px;
+            background:#363955;
             
             box-sizing:border-box;
             border-radius:12px;
             
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            border-right: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 2px 8px grey;
             backdrop-filter: blur(25px);
             border-radius: 10px;
-            border:solid #42445A;
+            border:none;
             display: flex;
             justify-content: center;
             
             overflow: hidden;
-          
+          color: white;
     
            
          }
@@ -121,8 +120,8 @@
             
             .postContent{
               font-size:    14px;
-              color: black;
-              font-weight: 900;
+              color: white;
+              font-weight: 700;
              
             }
             .profile{
@@ -156,8 +155,7 @@
 
           }
           .icon{
-          height:20px;
-          width:20px;
+         
           border-radius:50%;
           z-index:1;
           margin-top: 10px;
@@ -165,7 +163,7 @@
           border:1px solid gold;
           background: #00000057;
           width: 41px;
-          height: 41px;
+          height: 41px
           
           }
           .name{
@@ -195,51 +193,36 @@
           margin-top:5px;
           } 
          .poster{
-            border:1px solid black;
-            display:block;
 
-            height:255px;
-            width:0%;
-            
-
-            text-align:center;
-            font-size:2em;
-            background: linear-gradient(97deg,#2C2D3D,#323553,#2D344B);
-            box-sizing:border-box;
-            border-radius:12px;
-            
-            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(25px);
-            border-radius: 10px;
-            border:solid #42445A;
-
-            display: flex;
-            transition: 1s;
+            margin-left:10%;
+            height:auto;
+            box-shadow:0px 0px 6px black;
+            z-index:2;
             position:fixed;
-            overflow-x: hidden;
-            z-index: 2;
-            
+            align-items: center;
+            border-radius: 10px;
+            background:linear-gradient(90deg, #34364B,#2C2E42, #5B5E81);
+            background-size:200% 100%;
+            display:none ;
          }
          #message-input{
-            height: 190px;
-            width: 90%;
-            float: left;
-            border: none;
-            
-            background: #2C2D3D;
-            border-radius: 9px;
+background:none;
+            border:2px solid deepskyblue;
+            border-radius:10px;
+            margin-top:20px;
+            height:90px;
+            width:90%;
+            text-align:center;
          }
          button{
-            transition: 3s;
-          border-radius: 50px;
-          border:2px solid #0A0B12;
-          background: #262734;
-          width: 51px;
-          height: 51px;
-          
+               color:white;
+             border:none;
+             float: left;
+             background-color:deepskyblue;
+             border-radius:10px;
+             height:40px;
+             width:100px;
+            
             
          }
          
@@ -294,18 +277,25 @@ border-color:gold;
    
 }
 .timeDiv{
-   background:#F9F9FF21;
-   width:30%;
-   border-radius: 7%;
-   
-   border: 2px solid #343549;
-   
-   box-shadow: 2px 2px 2px #42445A;
-   color: white;
-   font-weight: 500;
-   font-family: tahoma;
-   text-align: center;
-   height: auto;
+   border-radius:5px 5px 5px 5px;
+    
+    float: left;
+               max-height: 80px;
+              color: #42445A;
+               width:30%;
+          
+          text-align: center;
+          font-size: 12px;
+          background-color: rgba(255, 255, 255, 0.9);
+          
+          
+          font-weight: 900;
+           box-shadow: 0px 0px 8px #B4B4BE;
+          border: 2px solid rgba(255, 255, 255, 0.9);
+          border-left: 2px solid rgba(255, 255, 255, 9);
+          border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+    
 }
             
             
@@ -322,6 +312,16 @@ border-color:gold;
   
 </header>
 
+ 
+     <div class="poster" id="poster">
+      <!--Tab to edit-->
+      <form id="message-form">
+         <textarea type="text" id="message-input" placeholder="Type your message..."></textarea>
+         <button type="submit">Send</button>
+      </form>
+      
+      
+   </div>
 
 <body id="body">
    
@@ -405,25 +405,13 @@ border-color:gold;
      </div>
      </div>
   </div>
- 
-     <div class="poster" id="poster">
-      <!--Tab to edit-->
-      <form id="message-form">
-         <textarea type="text" id="message-input" placeholder="Type your message..."></textarea>
-         <button type="submit">Send</button>
-      </form>
-      
-      
-   </div>
 
       <!--Tab to edit-->
 
    <!--Tab to edit-->
 
 <div id="chat-box">
-   
-   
-   
+    
 </div>
 
  
@@ -528,7 +516,7 @@ border-color:gold;
                         });
                         function openPoster(){
                            
-                           document.getElementById('poster').style.width="90%";
+                           document.getElementById('poster').style.display="block";
                            
                         }
                         
@@ -565,14 +553,11 @@ border-color:gold;
                               displayUserMessage(message);
                               messageInput.value = ""; // Clear input field
                            }
-                           document.getElementById('poster').style.width='0%';
+                           document.getElementById('poster').style.display='block';
                         });
                         
                      
                      
                      
                      
-                     </script>
-                     
-                     
-                     
+  </script>
